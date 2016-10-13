@@ -1,0 +1,146 @@
+	<%= render 'shared/header' %>
+  	<div class="row">
+      <!-- Sidebar menu -->
+      <div class="col s12 m4 l3 left_nav hide-on-small-only">
+			  <ul class="collection">
+          <% @blogPosts.each do |post| %>
+            <a href="#" id=<%= post.id%> class="link_list">
+              <li class="collection-item avatar blog_list">
+                <% if post.user_logo %>
+                  <%= image_tag(post.user_logo, :alt => "rss feed", :class => "responsive-img circle") %>
+                <% else %>
+                  <%= image_tag("profile_default.png", :alt => "rss feed", :class => "responsive-img circle") %>
+                <% end %>
+                <span class="title"><%= post.title%></span>
+                <p>Short description: <%= post.user_logo%></p>
+                <a href="#!" class="secondary-content"><i class="material-icons js-favorite">star_border</i></a>
+              </li>
+            </a>
+          <% end %>
+			  </ul>
+      </div>
+      <!-- END Sidebar menu -->
+
+      <!-- Main content -->
+      <div class="col s12 m5 l6">
+
+      <!-- blog title/subtitle -->
+      	<div class="row">
+      		<div class="col s12">
+      			<h3 class="center-align selected_blog_title"> Blog post One </h3>
+            <div class="selected_blog_description fr-view">
+      			   <p>Nulla fermentum maximus tortor in eleifend. Cras elementum ac libero ut vulputate. Curabitur sagittis, urna nec tempor sodales, dolor nulla dapibus sapien, a ultrices dui lectus sed dui. Phasellus hendrerit sem quam, a varius urna consectetur in. Vestibulum lorem enim, pellentesque sed lorem sed, porta sagittis magna. Nulla et enim maximus arcu scelerisque vestibulum. Donec sapien massa, facilisis in ligula volutpat, convallis luctus erat. Duis hendrerit varius ipsum pretium vestibulum. Donec hendrerit, nunc in tristique imperdiet, sapien dui finibus magna, at semper leo ante vitae nisi. Curabitur quis tempus massa. Vivamus eu mollis velit. Sed tristique porta dolor sed finibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            </div>
+      			<div class="divider"></div>
+      		</div>
+      	</div>
+      	<!-- blog title/subtitle -->
+
+
+    <!-- Comments load spinner -->
+    <div class="row">
+      <div class="col s12 center-align">
+        <p>Comments:</p>
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      	<!-- blog Post -->
+      	<div class="row">
+      		<div class="col s12">
+      		<%= image_tag("profile_default.png", :alt => "rss feed", :class => "post_user_image responsive-img circle") %>
+      			<p class="post_user">Pero Perić post on 15.09.2015 14:32:00</p>
+      			<p>
+      				Nulla fermentum maximus tortor in eleifend. Cras elementum ac libero ut vulputate. Curabitur sagittis, urna nec tempor sodales, dolor nulla dapibus sapien, a ultrices dui lectus sed dui. Phasellus hendrerit sem quam, a varius urna consectetur in. Vestibulum lorem enim, pellentesque sed lorem sed, porta sagittis magna. Nulla et enim maximus arcu scelerisque vestibulum. Donec sapien massa, facilisis in ligula volutpat, convallis luctus erat. Duis hendrerit varius...
+      			</p>
+      			<a href="#" class="center-align" style="display:block">Show more</a>
+      	   <div class="divider"></div>
+          </div>
+        </div>
+
+
+      	<div class="row">
+      		<div class="col s12">
+      		<%= image_tag("profile_default.png", :alt => "rss feed", :class => "post_user_image responsive-img circle") %>
+      			<p class="post_user">Pero Perić post on 15.09.2015 14:32:00</p>
+      			<p>
+      				Nulla fermentum maximus tortor in eleifend. Cras elementum ac libero ut vulputate. Curabitur sagittis, urna nec tempor sodales, dolor nulla dapibus sapien, a ultrices dui lectus sed dui. Phasellus hendrerit sem quam, a varius urna consectetur in. Vestibulum lorem enim, pellentesque sed lorem sed, porta sagittis magna. Nulla et enim maximus arcu scelerisque vestibulum. Donec sapien massa, facilisis in ligula volutpat, convallis luctus erat. Duis hendrerit varius ipsum pretium vestibulum. Donec hendrerit, nunc in tristique imperdiet, sapien dui finibus magna, at semper leo ante vitae nisi. Curabitur quis tempus massa. Vivamus eu mollis velit. Sed tristique porta dolor sed finibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos
+      			</p>
+      	   <div class="divider"></div>
+          </div>
+        </div>
+
+
+      	<div class="row">
+      		<div class="col s12">
+      		<%= image_tag("profile_default.png", :alt => "rss feed", :class => "post_user_image responsive-img circle") %>
+      			<p class="post_user">Pero Perić post on 15.09.2015 14:32:00</p>
+      			<p>
+      				Nulla fermentum maximus tortor in eleifend. Cras elementum ac libero ut vulputate. Curabitur sagittis, urna nec tempor sodales, dolor nulla dapibus sapien, a ultrices dui lectus sed dui. Phasellus hendrerit sem quam, a varius urna consectetur in. Vestibulum lorem enim, pellentesque sed lorem sed, porta sagittis magna. Nulla et enim maximus arcu scelerisque vestibulum. Donec sapien massa, facilisis in ligula volutpat, convallis luctus erat. Duis hendrerit varius ipsum pretium vestibulum. Donec hendrerit, nunc in tristique imperdiet, sapien dui finibus magna, at semper leo ante vitae nisi. Curabitur quis tempus massa. Vivamus eu mollis velit. Sed tristique porta dolor sed finibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos
+      			</p>
+      	   <div class="divider"></div>
+          </div>
+        </div>
+
+
+      	<div class="row">
+      		<div class="col s12">
+      		<%= image_tag("profile_default.png", :alt => "rss feed", :class => "post_user_image responsive-img circle") %>
+      			<p class="post_user">Pero Perić post on 15.09.2015 14:32:00</p>
+      			<p>
+      				Nulla fermentum maximus tortor in eleifend. Cras elementum ac libero ut vulputate. Curabitur sagittis, urna nec tempor sodales, dolor nulla dapibus sapien, a ultrices dui lectus sed dui. Phasellus hendrerit sem quam, a varius urna consectetur in. Vestibulum lorem enim, pellentesque sed lorem sed, porta sagittis magna. Nulla et enim maximus arcu scelerisque vestibulum. Donec sapien massa, facilisis in ligula volutpat, convallis luctus erat. Duis hendrerit varius...
+      			</p>
+      			<a href="#" class="center-align" style="display:block">Show more</a>
+      	   <div class="divider"></div>
+          </div>
+        </div>
+
+      	<!-- end blog Post -->
+      	<div class="col s12">
+          <a href="#" class="center-align" style="display:block; margin-bottom:50px">Load more posts<br><i class="material-icons">arrow_drop_down_circle</i></a>
+        </div>
+        <!-- Text editor -->
+        <input type='hidden' class='user_id' value='<%= @user.id %>'>
+        <input type='hidden' class='blog_id' value='<%= @blogPosts.first().id %>'>
+        <div class="row">
+          <div class="col s12 m5 l6 comment_editor">
+            <form class='text-editor'>
+              <textarea id="edit" name="content"></textarea>
+              <br>
+            </form>
+          </div>
+        </div>
+        <!-- END Text editor -->
+
+      </div>
+
+      <!-- new post theme -->
+      <div class="col s12 m3 l3 new_blog_card">
+        <div class="row">
+          <div class="col s12">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Create new blog post</span>
+                <p>Create blog post direct from here and start your own journe</p>
+                <input placeholder='Blog post title' id='title' class='blog_title' type='text' class="validate">
+              </div>
+              <div class="card-action">
+                <a href="#" class="new_blog_post">Create</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!--end main row-->
+<%= render 'shared/footer' %>

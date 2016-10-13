@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<title>RoR blog</title>
+	</head>
+	<body>
+
+  <!-- Dropdown Structure -->
+  <ul id="profile_options" class="dropdown-content">
+    <li><a href="/settings">Settings</a></li>
+    <li class="divider"></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+  <nav>
+    <div class="nav-wrapper blue lighten-1">
+      <%= image_tag("logo2.png", :alt => "rss feed", :class => "logo_image responsive-img") %>
+      <% if session[:user] %>
+  	    <ul class="right hide-on-med-and-down">
+    	    <li>
+            <%= @user.full_name %>
+          </li>
+  	      <!-- Dropdown Trigger -->
+  	      <li>
+            <a class="dropdown-button" href="#!" data-activates="profile_options">
+              <% if @user[:user_logo].blank? %>
+                <%= image_tag("profile_default.png", :alt => "rss feed", :class => "profile_image responsive-img circle") %>
+              <% else %>
+               <%= image_tag(@user[:user_logo], :alt => "rss feed", :class => "profile_image responsive-img circle") %>
+              <% end %>
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+  	    </ul>
+      <% end %>
+    </div>
+  </nav>
+<!-- App  header partial -->
+<!--
+<h3>This is partial header template</h3>
+<%= render 'shared/avatar' %> -->

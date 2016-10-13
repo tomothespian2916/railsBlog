@@ -1,0 +1,109 @@
+<%= render 'shared/header' %>
+  <input type='hidden' class="post_id" value=<%= @blogPost[:id] %>>
+  <div class="row">
+    <!-- Sidebar menu -->
+    <div class="col s12 m4 l3 left_nav hide-on-small-only">
+      <ul class="collection">
+        <li class="collection-item avatar blog_list">
+          <%= image_tag("profile_default.png", :alt => "rss feed", :class => "responsive-img circle") %>
+          <span class="title">Title</span>
+          <p>First Line <br>
+             Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons js-favorite">star_border</i></a>
+        </li>
+        <li class="collection-item avatar blog_list">
+          <%= image_tag("profile_default.png", :alt => "rss feed", :class => "responsive-img circle") %>
+          <span class="title">Title</span>
+          <p>First Line <br>
+             Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons js-favorite favorite">star</i></a>
+        </li>
+        <li class="collection-item avatar blog_list">
+          <%= image_tag("profile_default.png", :alt => "rss feed", :class => "responsive-img circle") %>
+          <span class="title">Title</span>
+          <p>First Line <br>
+             Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons js-favorite">star_border</i></a>
+        </li>
+        <li class="collection-item avatar blog_list">
+          <%= image_tag("profile_default.png", :alt => "rss feed", :class => "responsive-img circle") %>
+          <span class="title">Title</span>
+          <p>First Line <br>
+             Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons js-favorite">star_border</i></a>
+        </li>
+      </ul>
+    </div>
+    <!-- END Sidebar menu -->
+
+    <!-- Main content -->
+    <div class="col s12 m5 l6">
+    <!-- blog title/subtitle -->
+      <div class="row">
+        <div class="col s12">
+          <h3 class="center-align blog_post_title"> <span><%= @blogPost[:title]%></span>
+            <a class="btn-floating btn-large waves-effect waves-light red edit_title" style='float:right;'><i class="material-icons">mode_edit</i></a>
+          </h3>
+
+          <!-- Edit blog post title -->
+          <div class="input-field new_blog_title" style="display: none;">
+            <input type="text" class="new_titel_text" value=" <%= @blogPost[:title] %>">
+            <label for="first_name">Edit blog title</label>
+            <br>
+            <button class="btn waves-effect waves-light edit_title_button" type="submit" name="action">Edit
+              <i class="material-icons right">send</i>
+            </button>
+            <button class="btn waves-effect waves-light edit_cancel_button red" type="submit" name="action">Cancel
+              <i class="material-icons right">cancel</i>
+            </button>
+          </div>
+          <!-- END edit blog post title -->
+          <div class="description-content fr-view"><%= @blogPost[:description].html_safe %></div>
+          <p style='display: block; text-align: center; font-size:16px' class='description_p'>Write some Blog post description</a>
+          <div class="divider"></div><br>
+          <!-- Text editor -->
+          <form class='text-editor'>
+            <textarea id="edit" name="content"><%= @blogPost[:description].html_safe %></textarea>
+            <br>
+            <button class="btn waves-effect waves-light save-editor-text" type="submit" name="action">Save description
+              <i class="material-icons right">send</i>
+            </button>
+          </form>
+          <!-- END Text editor -->
+        </div>
+      </div>
+  </div> <!--END main content-->
+
+  <!-- Right card (followers, views etc..) -->
+  <div class="col s12 m2 l3">
+    <div class="row">
+      <div class="col s12">
+        <div class="card blue-grey">
+          <div class="card-content white-text">
+            <span class="card-title">Blog post overview</span>
+            <p>Views: 5003</p>
+            <div class="divider"></div><br>
+            <p>Subscribers: 18</p>
+            <div class="divider"></div><br>
+              <!-- Switch -->
+              Change post role
+            <div class="switch">
+              <label class="switch_publi_private">
+                Private
+                <input type="checkbox" class="chk" <% if @blogPost[:isPublic] %>checked<% end %> >
+                <span class="lever"></span>
+                Public
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END Right card -->
+
+<%= render 'shared/footer' %>
